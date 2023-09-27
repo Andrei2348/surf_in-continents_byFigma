@@ -1,0 +1,217 @@
+html{
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+body{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #171919;
+    color: #fff;
+    text-transform: uppercase;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+.headline-left{
+    @include adaptiv-font(22, 16);
+    letter-spacing: 7.3333px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    padding-left: 103px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 1px;
+        background-color: #ffffff;
+        opacity: 0.5;
+        left: 0;
+        top: 50%;
+    }
+}
+.headline-right{
+    @include adaptiv-font(22, 16);
+    letter-spacing: 7.3333px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    padding-right: 103px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 1px;
+        background-color: #ffffff;
+        opacity: 0.5;
+        right: 0;
+        top: 50%;
+    }
+}
+.subtitle{
+    display: inline-block;
+    text-align: right;
+    &-name{
+        font-weight: 800;
+        @include adaptiv-font(36, 20);
+        margin-bottom: 16px;
+        padding-right: 3px;
+        span{
+            font-weight: 100;
+        }
+    }
+}
+ul,
+li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.slider-arrows{
+    position: absolute;
+    z-index: 10;
+    top: 40px;
+    cursor: pointer;
+    &__left{
+        @include leftArrowPosition;
+    }
+    &__right{
+        right: 4vw;
+    }
+}
+.title{
+    span{
+        @include adaptiv-font(200, 80);
+        color: rgba(#fff, 0.02);
+        font-weight: 800;
+        position: relative;
+        display: inline-block;
+        
+    }
+    h3{
+        position: absolute;
+        top: 0;
+        right: -5px;
+        margin: 0;
+        color: #fff;
+        @include adaptiv-font(80, 40);
+        &::after{
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 80px;
+            height: 1px;
+            background-color: $green;
+        }
+    }
+}
+.btn{
+    font-weight: 800;
+    @include adaptiv-font(40, 20);
+    line-height: 74px !important;
+    display: inline-block;
+    span{
+        background-color: $green;
+        padding-left: 17px;
+        padding-right: 57px;
+        display: inline-block;
+        margin-left: 19px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 1px;
+            background-color: #fff;
+            top: 50%;
+            left: -10px;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 21px;
+            background-image: url(../images/icons/arrow-right.svg);
+            top: 50%;
+            right: 17px;
+            transform: translateY(-50%);
+        }
+    }
+}
+.surf,
+.holder{
+    padding: 160px 0 210px;
+}
+.description{
+    display: inline-block;
+    padding-left: 5px;
+    &__head{
+        font-weight: 800;
+        @include adaptiv-font(40, 20);
+        span{
+            font-weight: 100;
+        }
+    }
+}
+
+// Calc style
+.quantity {
+    display: inline-block;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+//   Input style
+.quantity input {
+    width: 28px;
+    height: 46px;
+    display: block;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: 800;
+    color: #fff;
+}
+.quantity input:focus {
+    outline: 0;
+}
+.quantity-nav {
+    float: left;
+    height: 14px;
+    width: 46px;
+    position: absolute;
+    top: 54px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.quantity-button {
+    position: relative;
+    cursor: pointer;
+    width: 14px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
